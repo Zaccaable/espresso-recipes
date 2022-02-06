@@ -1,0 +1,21 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+    <div class="container">
+      <div class="row m-5">
+        <div class="col-sm-6 col md-4 lg-3">
+          {% for coffee in coffees %}
+            <div class="card" style="width: 18rem;">
+              <img src="{{ coffee.image.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ coffee.name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ coffee.flavors }}</h6>
+                <p class="card-text">{{ coffee.description }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock %}

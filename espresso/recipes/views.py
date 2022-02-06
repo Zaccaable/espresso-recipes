@@ -15,3 +15,12 @@ def index(request):
     context['recipes'] = recipes
 
     return render(request, 'recipes/index.html', context)
+
+
+def coffees(request):
+    context = {}
+
+    coffees = Coffee.objects.all()
+    context['coffees'] = coffees
+
+    return render(request, 'recipes/coffees.html', context)

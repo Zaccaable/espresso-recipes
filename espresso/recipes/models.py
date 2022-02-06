@@ -7,14 +7,17 @@ class Coffee(models.Model):
         primary_key=True,
         default=uuid4,
         editable=False),
-    description = models.CharField(max_length=100, null=True)
+    name = models.CharField(max_length=100, null=True)
+    flavors = models.CharField(max_length=100, null=True)
+    description = models.TextField(max_length=500, null=True)
     brand = models.CharField(max_length=100, null=True)
     roast = models.CharField(max_length=100, null=True)
+    image = models.ImageField(null=True, upload_to='uploads/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.description} / {self.brand}' 
+        return f'{self.name} / {self.brand}' 
 
 
 class SuggestedPreparation(models.Model):

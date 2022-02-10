@@ -3,3 +3,4 @@ python-dotenv
 psycopg2-binary
 django-cockroachdb
 Pillow
+dj-database-url
